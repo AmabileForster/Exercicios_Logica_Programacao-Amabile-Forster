@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 7</title>
+</head>
+<body>
+    <h3>Digite uma distância em metros para converter em valores alternativos </h3>
+    <div>
+        <input type="number" id="idMetros"><br><br>
+        <input type="button" value="Enviar" onclick="distancia()">
+    </div>
+    <div>
+        <br>
+        <output id="idM"></output><br>
+        <output id="idKm"></output><br>
+        <output id="idHm"></output><br>
+        <output id="idDam"></output><br>
+        <output id="idDm"></output><br>
+        <output id="idCm"></output><br>
+        <output id="idMm"></output><br>
+    </div>
+
+
+    <script>
+        function distancia(){
+            let metros = Number(document.getElementById("idMetros").value);
+            km = metros / 1000;
+            hm = metros / 100;
+            dam = metros / 10;
+            dm = metros * 10;
+            cm = metros * 100;
+            mm = metros * 1000;
+
+            document.getElementById("idM").value = `A distância de ${metros}m corresponde a:`
+            document.getElementById("idKm").value = `${km}Km`
+            document.getElementById("idHm").value = `${hm}Hm`
+            document.getElementById("idDam").value = `${dam}Dam`
+            document.getElementById("idDm").value = `${dm}dm`
+            document.getElementById("idCm").value = `${cm}cm`
+            document.getElementById("idMm").value = `${mm}mm`
+        }
+
+
+    </script>
+</body>
+</html>

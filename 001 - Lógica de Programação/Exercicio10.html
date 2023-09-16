@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 10</title>
+</head>
+<body>
+    <h3>Calcular valor promocional do seu produto</h3>
+    <div>
+        <label for="idPreco">Qual o valor do item?</label><br><br>
+        <input type="number" id="idPreco"><br><br>
+        <input type="button" value="Enviar" onclick="calculoPromocional()">
+    </div>
+    <div>
+        <output id="idSaida"></output>
+    </div>
+
+
+    <script>
+        function calculoPromocional(){
+            let preco = Number(document.getElementById("idPreco").value);
+            desconto = preco * 0.05;
+            precoPromocional = preco - desconto;
+            
+
+            document.getElementById("idSaida").value = `O valor final do seu produto é R$${precoPromocional}` 
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 8</title>
+</head>
+<body>
+    <h3>Digite quanto dinheiro você tem, para saber quantos dolares pode comprar </h3>
+    <div>
+        <input type="number" id="idReais"><br><br>
+        <input type="button" value="Calcular" onclick="cambio()">
+    </div>
+    <div>
+        <output id="idSaida"></output><br><br>
+    </div>
+
+
+    <script>
+        function cambio(){
+            let reais = Number(document.getElementById("idReais").value);
+            let dolar = 3.45;
+            qtdCompra = reais / dolar;
+
+            document.getElementById("idSaida").value = `Você pode comprar U$${qtdCompra}.`
+        }
+    </script>
+</body>
+</html>

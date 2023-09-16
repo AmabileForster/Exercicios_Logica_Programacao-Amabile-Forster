@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 5</title>
+</head>
+<body>
+    <h3>Digite um numero para saber seu antecessor e seu sucessor</h3>
+    <div>
+        <input type="number" id="idNumber"><br><br>
+        <input type="button" value="Enviar" onclick="antecessorSucessor()">
+    </div>
+    <div>
+        <br>
+        <output id="idAntecessor"></output><br><br>
+        <output id="idSucessor"></output>
+    </div>
+
+
+    <script>
+        function antecessorSucessor(){
+            let number = Number(document.getElementById("idNumber").value);
+            let antecessor = number - 1;
+            let sucessor = number + 1;
+            
+
+            document.getElementById("idAntecessor").value = `O antecessor de ${number} é ${antecessor}` 
+            document.getElementById("idSucessor").value = `O sucessor de ${number} é ${sucessor}` 
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 4</title>
+</head>
+<body>
+    <h3>Digite suas notas</h3>
+    <div>
+        <label for="idNota1">Primeira nota</label><br><br>
+        <input type="number" id="idNota1"><br><br>
+        <label for="idNota2">Segunda nota</label><br><br>
+        <input type="number" id="idNota2"><br><br>
+        <input type="button" value="Enviar" onclick="somatoria()">
+    </div>
+    <div>
+        <output id="idSaida"></output>
+    </div>
+
+
+    <script>
+        function somatoria(){
+            let nota1 = Number(document.getElementById("idNota1").value);
+            let nota2 = Number(document.getElementById("idNota2").value);
+
+            media = (nota1 + nota2)/2;
+
+            document.getElementById("idSaida").value = `A média entre ${nota1} e ${nota2} é igual a ${media}` 
+        }
+
+
+    </script>
+
+</body>
+</html>

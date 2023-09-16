@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 9</title>
+</head>
+<body>
+    <h3>Calcular quanto de tinta é necessário para pintar uma parede</h3>
+    <div>
+        <label for="idAltura">Qual a altura da parede?</label><br><br>
+        <input type="number" id="idAltura"><br><br>
+        <label for="idLargura">Qual a largura da parede?</label><br><br>
+        <input type="number" id="idLargura"><br><br>
+        <input type="button" value="Enviar" onclick="metroQuadrado()">
+    </div>
+    <div>
+        <output id="idSaida"></output>
+    </div>
+
+
+    <script>
+        function metroQuadrado(){
+            let altura = Number(document.getElementById("idAltura").value);
+            let largura = Number(document.getElementById("idLargura").value);
+            m2 = altura * largura;
+            tinta = m2 / 2;
+            
+
+            document.getElementById("idSaida").value = `Você vai precisar de ${tinta}L de tinta.` 
+        }
+
+
+    </script>
+</body>
+</html>

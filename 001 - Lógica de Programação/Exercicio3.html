@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 3</title>
+</head>
+<body>
+    <h3>Digite dois números para saber a somatória</h3>
+    <div>
+        <label for="idNumber1">Primeiro número</label><br><br>
+        <input type="number" id="idNumber1"><br><br>
+        <label for="idNumber2">Segundo número</label><br><br>
+        <input type="number" id="idNumber2"><br><br>
+        <input type="button" value="Enviar" onclick="somatoria()">
+    </div>
+    <div>
+        <output id="idSaida"></output>
+    </div>
+
+
+    <script>
+        function somatoria(){
+            let number1 = Number(document.getElementById("idNumber1").value);
+            let number2 = Number(document.getElementById("idNumber2").value);
+
+            soma = number1 + number2
+
+            document.getElementById("idSaida").value = `A soma entre ${number1} e ${number2} é igual a ${soma}` 
+        }
+
+
+    </script>
+
+</body>
+</html>

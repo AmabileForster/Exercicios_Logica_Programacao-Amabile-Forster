@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2</title>
+</head>
+<body>
+    <div>
+        <label for="idNome">Nome do Funcionário:</label><br><br>
+        <input type="text" id="idNome"><br><br>
+        <label for="idSalario">Salário:</label><br><br>
+        <input type="number" id="idSalario"><br><br>
+        <input type="button" value="Enviar" onclick="salarioFuncionario()">
+    </div>
+    <div>
+        <output id="idSaida"></output>
+    </div>
+
+    <script>
+
+        function salarioFuncionario(){
+            let funcionario = document.getElementById("idNome").value
+            let salario = document.getElementById("idSalario").value
+
+            document.getElementById("idSaida").value = `O funcionário ${funcionario} tem um salário de ${salario} em Junho.`
+        }
+
+
+
+    </script>
+</body>
+</html>

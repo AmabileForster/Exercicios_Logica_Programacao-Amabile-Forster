@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 6</title>
+</head>
+<body>
+    <h3>Digite um numero para calcular seu dobro e sua terça parte</h3>
+    <div>
+        <input type="number" id="idNumber"><br><br>
+        <input type="button" value="Enviar" onclick="calculo()">
+    </div>
+    <div>
+        <output id="idDobro"></output><br><br>
+        <output id="idTercaParte"></output>
+    </div>
+
+
+    <script>
+        function calculo(){
+            let number = Number(document.getElementById("idNumber").value);
+            let dobro = number * 2;
+            let tercaParte = number / 3;
+
+            document.getElementById("idDobro").value = `O dobro de ${number} é ${dobro}`
+            document.getElementById("idTercaParte").value = `A terça parte de ${number} é ${tercaParte}` 
+        }
+
+
+    </script>
+</body>
+</html>
