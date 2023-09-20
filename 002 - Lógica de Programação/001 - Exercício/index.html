@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form>
+        <input type="number" class="linha" id="idNum1" placeholder="Digite um numero">
+        <input type="number" class="linha" id="idNum2" placeholder="Digite outro numero">
+        <input type="button" value="Enviar" onclick="maiorMenor()" class="linha">
+        <output id="idOut" class="linha"></output>
+        <output id="idOut2" class="linha warning"></output>
+    </form>
+
+    <script>
+        function maiorMenor(){
+            let num1 = Number(document.getElementById("idNum1").value)
+            let num2 = Number(document.getElementById("idNum2").value)
+            
+            if (num1 == num2) {
+                document.getElementById("idOut2").value =  `Você precisa digitar dois números diferentes!`
+            } else if (num1 > num2) {
+                document.getElementById("idOut").value =  `${num1} é maior que ${num2}`
+            } else {
+                document.getElementById("idOut").value =  `${num2} é maior que ${num1}`
+            }
+            
+            
+        }
+
+    </script>
+</body>
+</html>
