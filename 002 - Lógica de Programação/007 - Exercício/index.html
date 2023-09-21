@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 7</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h3>Digite seu salario bruto para descobrir qual será o valor com descontos.</h3>
+    <form>
+        <input type="number" class="linha" id="salario" placeholder="Digite seu salario">
+        <input type="button" value="Enviar" onclick="descontoSalario()" class="linha">
+        <output id="idOut" class="linha"></output>
+    </form>
+
+    <script>
+        function descontoSalario(){
+            let salarioBruto = Number(document.getElementById("salario").value)
+            
+            if (salarioBruto <= 600) {
+                document.getElementById("idOut").value =  `Seu salário está isento de descontos e você receberá R$${salarioBruto}`
+            } else if (salarioBruto > 600 && salarioBruto <= 1200) {
+                desconto = salarioBruto - (salarioBruto * 0.25)
+                document.getElementById("idOut").value =  `Seu salário liquido será de R$${desconto}`
+            } else if (salarioBruto > 1200 && salarioBruto <= 2000) {
+                desconto = salarioBruto - (salarioBruto * 0.30)
+                document.getElementById("idOut").value =  `Seu salário liquido será de R$${desconto}`
+            } else {
+                desconto = salarioBruto - (salarioBruto * 0.35)
+                document.getElementById("idOut").value =  `Seu salário liquido será de R$${desconto}`
+            }
+            
+        }
+
+    </script>
+</body>
+</html>

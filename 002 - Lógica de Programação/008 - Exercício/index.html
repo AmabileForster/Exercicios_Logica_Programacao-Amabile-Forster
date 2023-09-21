@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 8</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form>
+        <input type="number" class="linha" id="valor" placeholder="Digite o valor do item">
+        <input type="button" value="Enviar" onclick="intervalo()" class="linha">
+        <output id="idOut" class="linha"></output>
+    </form>
+
+    <script>
+        function intervalo(){
+            let valorItem = Number(document.getElementById("valor").value)
+            
+            if (valorItem < 20) {
+                lucro = valorItem + (valorItem * 0.50)
+                document.getElementById("idOut").value =  `Você deverá cobrar R$${lucro} por esse item`
+            } else {
+                lucro = valorItem + (valorItem * 0.35)
+                document.getElementById("idOut").value =  `Você deverá cobrar R$${lucro} por esse item`
+            }
+            
+        }
+
+    </script>
+</body>
+</html>

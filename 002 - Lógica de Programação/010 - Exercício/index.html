@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 10</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bgLogin">
+        <form class="formLogin">
+            <label for="idUser" >Usuario</label>
+            <input type="text" id="idUser" placeholder="Digite seu usuario" autofocus="true" />
+            <output id="idOut1"></output>
+            <label for="idPassword">Senha</label>
+            <input type="password" id="idPassword" placeholder="Digite sua senha" />
+            <output id="idOut2"></output>
+            <input type="button" value="Login" class="btnLogin" onclick="login()"/>
+            <output id="idOut3"></output>
+        </form>
+    </div>
+
+
+    <script>
+        function login(){
+            let user = document.getElementById("idUser").value;
+            let senha = document.getElementById("idPassword").value;
+            
+            let aluno1 = 'Trocar123';
+            let aluno2 = 'Senha@123';
+            let aluno3 = '123Trocar';
+
+
+            if ((user == 'Aluno1' && senha == aluno1) || (user == 'Aluno2' && senha == aluno2) || (user == 'Aluno3' && senha == aluno3)){
+                document.getElementById('idOut1').value = ``
+                document.getElementById('idOut2').value = ``
+                document.getElementById('idOut3').value = `Acesso Permitido`
+            } else if((user == 'Aluno1' && senha != aluno1) || (user == 'Aluno2' && senha != aluno2) || (user == 'Aluno3' && senha != aluno3)){
+                document.getElementById('idOut1').value = ``
+                document.getElementById('idOut2').value = `Senha incorreta`
+                document.getElementById('idOut3').value = ``
+            } else {
+                document.getElementById('idOut1').value = `Usuario não cadastrado`
+                document.getElementById('idOut2').value = ``
+                document.getElementById('idOut3').value = ``
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>

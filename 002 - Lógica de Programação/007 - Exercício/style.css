@@ -1,0 +1,15 @@
+.linha{
+    display: flex;
+    margin: 8px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+}
+
+h3{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+}
+
+output{
+    font-weight: bold;
+}

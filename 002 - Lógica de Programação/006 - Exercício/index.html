@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 6</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form>
+        <input type="number" class="linha" id="idNum1" placeholder="Digite primeiro numero">
+        <input type="number" class="linha" id="idNum2" placeholder="Digite segundo numero">
+        <input type="radio" name="calculadora" id="idSoma">
+        <label for="idSoma">Somar</label>
+        <input type="radio" name="calculadora" id="idSubtracao">
+        <label for="idSubtracao" >Subtrair</label>
+        <input type="radio" name="calculadora" id="idMultiplicacao">
+        <label for="idMultiplicacao">Multiplicar</label>
+        <input type="radio" name="calculadora" id="idDividisao">
+        <label for="idDividisao">Dividir</label>
+        <input type="radio" name="calculadora" id="idPorcentagem">
+        <label for="idPorcentagem">Porcentagem</label>
+        <input type="button" value="Enviar" onclick="calcular()" class="linha">
+    </form>
+    <p>Em caso de porcentagem o valor percentual será o segundo número</p>
+    <output id="idOut" class="linha"></output>
+
+    <script>
+        function calcular(){
+            //variaveis numericas
+            let num1 = Number(document.getElementById("idNum1").value);
+            let num2 = Number(document.getElementById("idNum2").value);
+
+            //variaveis operacionas
+            let soma = document.getElementById("idSoma").checked;
+            let subtracao = document.getElementById("idSubtracao").checked;
+            let multiplicacao = document.getElementById("idMultiplicacao").checked;
+            let divisao = document.getElementById("idDividisao").checked;
+            let porcentagem = document.getElementById("idPorcentagem").checked;
+            
+            //porcentagem
+            let percentual = num2 / 100;
+
+            if (soma == true){
+                document.getElementById("idOut").value = num1 + num2;
+            } else if (subtracao == true){
+                document.getElementById("idOut").value = num1 - num2;
+            } else if (multiplicacao == true){
+                document.getElementById("idOut").value = num1 * num2;
+            } else if (divisao == true){
+                document.getElementById("idOut").value = num1 / num2;
+            } else {
+                document.getElementById("idOut").value = num1 - (num1 * percentual);
+            }
+        }
+
+    </script>
+</body>
+</html>
