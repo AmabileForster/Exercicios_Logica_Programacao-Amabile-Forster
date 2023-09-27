@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 9</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>Área Formas Geométricas</legend>
+
+            <label for="idMeasure1" class="linha" id="lbMeasure1">Raio</label>
+            <input type="number" class="linha" step="0.01" id="idMeasure1">
+
+            <label ffor="idMeasure2" class="linha" id="lbMeasure2"></label>
+            <input type="number" class="linha" step="0.01" id="idMeasure2" disabled>
+
+            <input type="radio" name="nmGeometricForm" value="Circle" id="idCircle" onclick="enableCircle()" checked>
+            <label for="idCircle">Circulo</label>
+
+            <input type="radio" name="nmGeometricForm" value="Rectangle" id="idRectangle" onclick="enableRectangle()">
+            <label for="idRectangle">Retângulo</label>
+
+            <input type="radio" name="nmGeometricForm" value="RecTriangle" id="idRecTriangle" onclick="enableRecTriangle()">
+            <label for="idRecTriangle">Triâgulo Retângulo</label>
+
+            <input type="radio" name="nmGeometricForm" value="EquiTriangle" id="idEquiTriangle" onclick="enableEquiTriangle()">
+            <label for="idEquiTriangle">Triâgulo Equilatero</label>
+
+            <input type="button" value="Calcular" onclick="calculateArea()">
+            <output id="idOut" class="linha"></output>
+        </fieldset>
+    </form>
+
+
+    <script>
+        function enableCircle(){
+            document.getElementById("lbMeasure1").innerText = "Raio";
+            document.getElementById("lbMeasure2").innerText = "";
+            document.getElementById("idMeasure2").disabled = true;
+        }
+
+        function enableRectangle(){
+            document.getElementById("lbMeasure1").innerText = "Base";
+            document.getElementById("lbMeasure2").innerText = "Altura";
+            document.getElementById("idMeasure2").disabled = false;
+        }
+
+        function enableRecTriangle(){
+            document.getElementById("lbMeasure1").innerText = "Base";
+            document.getElementById("lbMeasure2").innerText = "Altura";
+            document.getElementById("idMeasure2").disabled = false;
+        }
+
+        function enableEquiTriangle(){
+            document.getElementById("lbMeasure1").innerText = "Lado";
+            document.getElementById("lbMeasure2").innerText = "";
+            document.getElementById("idMeasure2").disabled = true;
+        }
+
+        function calculateArea(){
+            let area 
+            let geometricForm = document.querySelector("input[name=nmGeometricForm]:checked").value
+            
+            switch (geometricForm) {
+                case "Circle":
+                    let raio = Number(document.getElementById("idMeasure1").value)
+                    area = Math.PI * raio * raio
+                break;
+
+                case "Rectangle":
+                    let baseRec = Number(document.getElementById("idMeasure1").value)
+                    let highRec = Number(document.getElementById("idMeasure2").value)
+                    area = baseRec * highRec
+                break;
+
+                case "RecTriangle":
+                    let baseRecTri = Number(document.getElementById("idMeasure1").value)
+                    let highRecTri = Number(document.getElementById("idMeasure2").value)
+                    area = (baseRecTri * highRecTri)/2
+                break;
+
+                case "EquiTriangle":
+                    let side = Number(document.getElementById("idMeasure1").value)
+                    area = ((side ** 2) * Math.sqrt(3)) /4
+                break;
+
+            }
+
+            document.getElementById("idOut").value = "Area: " + area.toFixed(2) + " cm2"
+        }
+    </script>
+</body>
+</html>
