@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 8</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="">
+        <label for="idSpeed" class="linha">Qual a distância (Km)?</label>
+        <input type="number" id="idSpeed" class="linha">
+        <input type="button" class="linha" value="Calcular valor da viagem" onclick="calculatePrice()">
+        <output id="idOut"></output>
+    </form>
+
+    <script>
+        function calculatePrice(){
+            let distance = Number(document.getElementById("idSpeed").value);
+            let out = document.querySelector('#idOut');
+            let price 
+
+
+
+            if (distance > 200){
+                let distanceLonger = distance - 200;
+                price = (200 * 0.5) + (distanceLonger * 0.45)
+            } else {
+                price = distance * 0.50
+            } 
+
+            out.value = 'O valor da sua viagem é de R$' + price.toFixed(2)
+        }
+
+
+
+
+    </script>
+</body>
+</html>

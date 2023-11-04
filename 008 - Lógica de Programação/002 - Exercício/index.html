@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercício 2</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Listagem de Pessoas Menores de Idade</h1>
+        <ul class="list-group">
+            <script>
+                var nomes = ["Alice", "Bob", "Carla", "David", "Eva"];
+                var idades = [25, 17, 15, 30, 12];
+
+                var menoresDeIdade = nomes
+                    .map(function (nome, index) {
+                        return {
+                            nome: nome,
+                            idade: idades[index]
+                        };
+                    })
+                    .filter(function (pessoa) {
+                        return pessoa.idade < 18;
+                    });
+
+                menoresDeIdade.forEach(function (pessoa) {
+                    document.write('<li class="list-group-item">' + pessoa.nome + ' - ' + pessoa.idade + ' anos</li>');
+                });
+            </script>
+        </ul>
+    </div>
+</body>
+</html>

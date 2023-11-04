@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercício 6</title>
+</head>
+<body>
+    <script>
+        var nomes = [];
+        var enderecos = [];
+        var nomesMae = [];
+        var nomesPai = [];
+        var telefonesPais = [];
+        var notas = [[], [], [], []];
+
+        // Função para cadastrar aluno
+        function cadastrarAluno() {
+            var nome = prompt("Digite o nome do aluno:");
+            var endereco = prompt("Digite o endereço do aluno:");
+            var nomeMae = prompt("Digite o nome da mãe do aluno:");
+            var nomePai = prompt("Digite o nome do pai do aluno:");
+            var telefonePais = prompt("Digite o telefone dos pais do aluno:");
+
+            nomes.push(nome);
+            enderecos.push(endereco);
+            nomesMae.push(nomeMae);
+            nomesPai.push(nomePai);
+            telefonesPais.push(telefonePais);
+
+            for (var i = 0; i < 4; i++) {
+                var nota = parseFloat(prompt("Digite a nota " + (i + 1) + " do aluno:"));
+                notas[i].push(nota);
+            }
+
+            alert("Aluno cadastrado com sucesso!");
+        }
+
+        // Função para consultar cadastro e situação do aluno
+        function consultarAluno() {
+            var nomeAluno = prompt("Digite o nome do aluno para consulta:");
+            var index = nomes.indexOf(nomeAluno);
+
+            if (index !== -1) {
+                document.write("<h1>Informações do Aluno:</h1>");
+                document.write("<p>Nome: " + nomes[index] + "</p>");
+                document.write("<p>Endereço: " + enderecos[index] + "</p>");
+                document.write("<p>Nome da mãe: " + nomesMae[index] + "</p>");
+                document.write("<p>Nome do pai: " + nomesPai[index] + "</p>");
+                document.write("<p>Telefone dos pais: " + telefonesPais[index] + "</p>");
+                document.write("<p>Notas: " + notas[0][index] + ", " + notas[1][index] + ", " + notas[2][index] + ", " + notas[3][index] + "</p>");
+            } else {
+                alert("Aluno não encontrado.");
+            }
+        }
+
+        // Menu
+        var opcao;
+        while (opcao !== "3") {
+            opcao = prompt("Escolha uma opção:\n1 - Cadastrar aluno\n2 - Consultar cadastro e situação do aluno\n3 - Sair");
+            if (opcao === "1") {
+                cadastrarAluno();
+            } else if (opcao === "2") {
+                consultarAluno();
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 10</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div>
+        <fieldset>
+            <legend>Cotação</legend>
+            <div>
+                <label for="">Real x Dolar</label><br>
+                <input type="number" id="currencieReal"><br><br>
+            </div>
+            <div>
+                <label for="">Dolar Canadense x Dolar</label><br>
+                <input type="number" id="currencieCanadianDollar"><br><br>
+            </div>
+            <div>
+                <label for="">Euro x Dolar</label><br>
+                <input type="number" id="currencieEuro"><br><br>
+            </div>
+            <div>
+                <label for="">Libra Esterlina x Dolar</label><br>
+                <input type="number" id="currenciePoundSterling"><br><br>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Conversão</legend>
+            <div>
+                <p>De:</p>
+                <div>
+                    <input type="radio" name="nmFrom" id="idFromDollar" value="Dollar" checked>
+                    <label for="idFromDollar">Dolar</label>
+                </div>
+                <div>
+                    <input type="radio" name="nmFrom" id="idFromEuro">
+                    <label for="idFromEuro">Euro</label>
+                </div>
+                <div>
+                    <input type="radio" name="nmFrom" id="idFromPound">
+                    <label for="idFromPound">Libra Esterlina</label>
+                </div>
+                <div>
+                    <input type="radio" name="nmFrom" id="idFromReal">
+                    <label for="idFromReal">Real</label>
+                </div>
+                <div>
+                    <input type="radio" name="nmFrom" id="idFromCanadian">
+                    <label for="idFromCanadian">Dolar Canadense</label>
+                </div>
+            </div>
+            <div>
+                <p>Para:</p>
+                <div>
+                    <input type="radio" name="nmTo" id="idToDollar" checked>
+                    <label for="idToDollar">Dolar</label>
+                </div>
+                <div>
+                    <input type="radio" name="nmTo" id="idToEuro" value="Euro">
+                    <label for="idToEuro">Euro</label>
+                </div>
+                <div>
+                    <input type="radio" name="nmTo" id="idToPound">
+                    <label for="idToPound">Libra Esterlina</label>
+                </div>
+                <div>
+                    <input type="radio" name="nmTo" id="idToReal">
+                    <label for="idToReal">Real</label>
+                </div>
+                <div>
+                    <input type="radio" name="nmTo" id="idToCanadian">
+                    <label for="idToCanadian">Dolar Canadense</label>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Valor de conversão</legend>
+            <input type="number" id="idEntry"><br><br>
+            <input type="button" value="Cotar" onclick="quote()"><br><br>
+            <output id="idOut">Valor:</output>
+        </fieldset>
+    </div>
+
+    <script>
+
+
+        function quote() {
+            let currencieCanadianDollar = Number(document.getElementById('currencieCanadianDollar').value)
+            let currenciePoundSterling = Number(document.getElementById('currenciePoundSterling').value)
+            let currencieEuro = Number(document.getElementById('currencieEuro').value)
+            let currencieReal = Number(document.getElementById('currencieReal').value)
+            let currencieDollar = 1
+
+            let from = document.querySelector("input[name=nmFrom]:checked").id
+            let to = document.querySelector("input[name=nmTo]:checked").id
+
+            let entry = Number(document.getElementById('idEntry').value)
+
+            let output = document.getElementById('idOut')
+
+            let valueDollar
+            let valueOut
+
+            switch (from) {
+                case 'idFromCanadian':
+                    valueDollar = entry / currencieCanadianDollar
+                    break;
+                case 'idFromPound':
+                    valueDollar = entry / currenciePoundSterling
+                    break;
+                case 'idFromEuro':
+                    valueDollar = entry / currencieEuro
+                    break;
+                case 'idFromReal':
+                    valueDollar = entry / currencieReal
+                    break;
+                case 'idFromDollar':
+                    valueDollar = entry / currencieDollar
+                    break;
+            }
+
+            switch (to) {
+                case 'idToCanadian':
+                    valueOut = valueDollar * currencieCanadianDollar
+                    break;
+                case 'idToPound':
+                    valueOut = valueDollar * currenciePoundSterling
+                    break;
+                case 'idToEuro':
+                    valueOut = valueDollar * currencieEuro
+                    break;
+                case 'idToReal':
+                    valueOut = valueDollar * currencieReal
+                    break;
+                case 'idToDollar':
+                    valueOut = valueDollar * currencieDollar
+                    break;
+            }
+            output.value = "Valor: " + valueOut.toFixed(2)
+        }
+    </script>
+</body>
+
+</html>

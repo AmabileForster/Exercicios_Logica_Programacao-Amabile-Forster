@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="">
+        <label for="idName" class="linha">Digite um ano para saber se ele é bissexto</label>
+        <input type="text" class="linha" id="idYear">
+        <input type="button" class="linha" onclick="calculate()" value="Calcular">
+        <output id="idOut"></output>
+    </form>
+
+    <script>
+        function calculate(){
+            let year = Number(document.getElementById("idYear").value);
+            let restCalculation4 = year % 4;
+            let restCalculation100 = year % 100;
+            let restCalculation400 = year % 400;
+
+            if (restCalculation4 == 0 && restCalculation100 != 0 || restCalculation400 == 0) {
+                document.getElementById("idOut").value = "O ano é bissexto!"
+            } else {
+                document.getElementById("idOut").value = "O ano não é bissexto!"
+            }
+        }
+    </script>
+</body>
+</html>

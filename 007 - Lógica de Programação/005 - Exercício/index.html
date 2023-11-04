@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercício 5</title>
+</head>
+<body>
+    <script>
+        var numeros = [];
+
+        for (var i = 0; i < 10; i++) {
+            var numero = parseInt(prompt("Digite um número:"));
+            numeros.push(numero);
+        }
+
+        var opcao = prompt("Escolha uma opção:\n1 - Ordenar em ordem crescente\n2 - Ordenar em ordem decrescente");
+
+        if (opcao === "1") {
+            numeros.sort(function(a, b) { return a - b; });
+        } else if (opcao === "2") {
+            numeros.sort(function(a, b) { return b - a; });
+        }
+
+        alert("Números ordenados: " + numeros.join(", "));
+    </script>
+</body>
+</html>

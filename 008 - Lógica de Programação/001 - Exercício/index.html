@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercício 1</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <label for="idFrutas">Frutas:</label>
+        <br>
+        <input list="idFrutas" class="form-control">
+        <datalist id="idFrutas">
+            <script>
+                var frutas = ["tomate", "morango", "limão", "Abacaxi", "Pêra", "Uva"];
+                frutas.forEach(function(fruta, index) {
+                    document.write('<option value="' + index + '">' + fruta + '</option>');
+                });
+            </script>
+        </datalist>
+    </div>
+</body>
+</html>

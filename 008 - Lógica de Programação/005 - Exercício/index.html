@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercício 5</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Ordenação de Números</h1>
+        <ul class="list-group" id="numeros-list">
+            <script>
+                var numeros = [5, 3, 1, 4, 2];
+
+                function exibirNumeros() {
+                    var numerosList = document.getElementById('numeros-list');
+                    numerosList.innerHTML = '';
+                    numeros.forEach(function (numero) {
+                        var li = document.createElement('li');
+                        li.className = 'list-group-item';
+                        li.textContent = numero;
+                        numerosList.appendChild(li);
+                    });
+                }
+
+                exibirNumeros();
+
+                var ordemCresSort = document.createElement('button');
+                ordemCresSort.className = 'btn btn-primary';
+                ordemCresSort.textContent = 'Ordenar em Ordem Crescente';
+                ordemCresSort.onclick = function () {
+                    numeros.sort(function (a, b) { return a - b; });
+                    exibirNumeros();
+                };
+
+                var ordemDecresSort = document.createElement('button');
+                ordemDecresSort.className = 'btn btn-primary';
+                ordemDecresSort.textContent = 'Ordenar em Ordem Decrescente';
+                ordemDecresSort.onclick = function () {
+                    numeros.sort(function (a, b) { return b - a; });
+                    exibirNumeros();
+                };
+
+                document.body.appendChild(ordemCresSort);
+                document.body.appendChild(ordemDecresSort);
+            </script>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="">
+        <label for="idNumber" class="linha">Digite um numero</label>
+        <input type="number" class="linha" id="idNumber">
+        <input type="button" class="linha" onclick="isEven()" value="É par?">
+        <output id="idOut"></output>
+    </form>
+
+    <script>
+        function isEven(){
+            let number = Number(document.getElementById("idNumber").value)
+            let rest = number % 2
+
+            if(rest == 0){
+                document.getElementById("idOut").value = `O número ${number} é par!`
+            } else {
+                document.getElementById("idOut").value = `O número ${number} é ímpar!`
+            }
+        }
+    </script>
+</body>
+</html>

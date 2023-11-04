@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4</title>
+</head>
+<body>
+      <script>
+        
+        var fibonacci = 0
+        var previous = 0
+        var sequence = 1
+        var next 
+
+        var fibonacciSequence = []
+
+        for (let i = fibonacci; i < 16; i++) {
+            fibonacciSequence.push(previous)
+            next = previous + sequence
+            previous = sequence
+            sequence = next
+            fibonacci++
+            
+        }
+
+        console.table(fibonacciSequence)
+
+    </script>
+</body>
+</html>

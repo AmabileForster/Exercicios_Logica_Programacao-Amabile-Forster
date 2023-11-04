@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercício 5</title>
+</head>
+
+<body>
+    <label for="idPrice">Digite o preço</label><br /><br />
+    <input type="text" name="nmPrice" id="idPrice" /><br /><br />
+
+    <input type="button" value="Adicionar preço" onclick="add()" />
+    <input type="button" value="Mostrar" onclick="show()" /><br /><br />
+    <output id="idOut"></output>
+
+    <script>
+        //Crie um aplicativo que leia o preço de 'n' produtos. No final, mostre na tela qual foi o maior e qual foi o menor preço digitados.
+
+        var highestPrice = 0;
+        var lowestPrice = 99999999999;
+
+        function add() {
+            price = Number(document.getElementById("idPrice").value);
+
+            if (price > highestPrice) {
+                highestPrice = price;
+            }
+
+            if (price < lowestPrice) {
+                lowestPrice = price;
+            }
+
+            console.log("maior" + highestPrice);
+            console.log("menor" + lowestPrice);
+        }
+
+        function show() {
+            document.querySelector(
+                "#idOut"
+            ).innerText = `O maior preço inserido foi: ${highestPrice} \n O menor preço inserido foi: ${lowestPrice}`;
+        }
+    </script>
+</body>
+
+</html>

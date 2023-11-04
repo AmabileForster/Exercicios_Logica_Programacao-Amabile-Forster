@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercício 3</title>
+</head>
+
+<body>
+    <output id="idOut"></output>
+
+    <script>
+        //Desenvolva um programa que faça o sorteio de 20 números entre 0 e 10 e mostre na tela:
+        //a) Quais foram os números sorteados
+        //b) Quantos números estão acima de 5
+        //c) Quantos números são divisíveis por 3
+
+        var message = "Numeros sorteados:";
+        var above5 = 0;
+        var divisible3 = 0;
+
+        for (let i = 0; i < 20; i++) {
+            var drawnNumber = parseInt(Math.random() * 11);
+
+            message = `${message} ${drawnNumber} `;
+
+            if (drawnNumber > 5) {
+                above5++;
+            }
+            if (drawnNumber % 3 == 0) {
+                divisible3++;
+            }
+        }
+
+        console.log(message);
+        document.querySelector(
+            "#idOut"
+        ).innerText = `${message} \n Quantidade de numeros maiores que 5: ${above5} \n Quantidade de numeros divisiveis por 3: ${divisible3}`;
+    </script>
+</body>
+
+</html>

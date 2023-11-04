@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 7</title>
+</head>
+<body>
+    <output id="idOut"></output>
+
+    <script>
+        //Crie um programa que calcule e mostre na tela o resultado da soma entre 6 + 8 + 10 + 12 + 14 + ... + 98 + 100.
+
+            var message = "Inicio "
+            var count = 6
+            var sum = 0
+
+            for (let i = count; i <= 100; i++) {
+                let divisible2 = count % 2
+                if (divisible2 == 0){
+                    sum += count
+                }
+                count++
+            }
+
+            message = `Resultado: ${sum}`
+
+            console.log(message);
+            document.querySelector('#idOut').value = message
+        
+
+    </script>
+</body>
+</html>

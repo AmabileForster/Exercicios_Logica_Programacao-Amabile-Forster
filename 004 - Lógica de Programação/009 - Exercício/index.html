@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 9</title>
+</head>
+<body>
+    <label for="idInitialNumber">Numero inicial</label><br>
+    <input type="number" id="idInitialNumber"><br><br>
+    <label for="idFinalNumber">Numero Final</label><br>
+    <input type="number" id="idFinalNumber"><br><br>
+    <label for="idIncrement">Incremento</label><br>
+    <input type="number" id="idIncrement"><br><br>
+    <input type="button" value="Contar" onclick="counter()"><br><br>
+
+    <output id="idOut"></output>
+
+    <script>
+        //O programa 8 vai ter um problema quando digitarmos o primeiro valor maior que o último. Resolva esse problema com um código que funcione em qualquer situação.
+
+        function counter(){
+            let initial = Number(document.querySelector('#idInitialNumber').value)
+            let final = Number(document.querySelector('#idFinalNumber').value)
+            let increment = Number(document.querySelector('#idIncrement').value)
+            let message = "Inicio "
+
+            if (increment == 0) {
+                message = 'O incremento precisa ser diferente de 0'
+            }
+
+            if (initial > final) {
+                for (let i = final; i < initial; i+= increment) {
+                message = message + i + " "
+                }
+            }else {
+                for (let i = initial; i < final; i+= increment) {
+                message = message + i + " "
+                }
+            }
+
+            message = message + "Acabou!"
+
+            console.log(message);
+            document.querySelector('#idOut').value = message
+        }
+
+    </script>
+</body>
+</html>

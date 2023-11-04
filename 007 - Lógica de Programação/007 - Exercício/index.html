@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercício 7 - Jogo de Perguntas e Respostas</title>
+</head>
+<body>
+    <script>
+        var estados = ["Acre", "Alagoas", "Amapá", "Amazonas", "Bahia", "Ceará", "Distrito Federal", "Espírito Santo", "Goiás", "Maranhão", "Mato Grosso", "Mato Grosso do Sul", "Minas Gerais", "Pará", "Paraíba", "Paraná", "Pernambuco", "Piauí", "Rio de Janeiro", "Rio Grande do Norte", "Rio Grande do Sul", "Rondônia", "Roraima", "Santa Catarina", "São Paulo", "Sergipe", "Tocantins"];
+        var capitais = ["Rio Branco", "Maceió", "Macapá", "Manaus", "Salvador", "Fortaleza", "Brasília", "Vitória", "Goiânia", "São Luís", "Cuiabá", "Campo Grande", "Belo Horizonte", "Belém", "João Pessoa", "Curitiba", "Recife", "Teresina", "Rio de Janeiro", "Natal", "Porto Alegre", "Porto Velho", "Boa Vista", "Florianópolis", "São Paulo", "Aracaju", "Palmas"];
+
+        var jogadores = ["Jogador 1", "Jogador 2", "Jogador 3", "Jogador 4"];
+        var pontuacoes = [0, 0, 0, 0];
+
+        function sortearEstado() {
+            var randomIndex = Math.floor(Math.random() * estados.length);
+            return randomIndex;
+        }
+
+        for (var rodada = 1; rodada <= 10; rodada++) {
+            var estadoSorteadoIndex = sortearEstado();
+            var estadoSorteado = estados[estadoSorteadoIndex];
+            var capitalCorreta = capitais[estadoSorteadoIndex];
+            var jogadorSorteadoIndex = Math.floor(Math.random() * 4);
+            var jogadorSorteado = jogadores[jogadorSorteadoIndex];
+            var resposta = prompt("Rodada " + rodada + ": Qual é a capital de " + estadoSorteado + ", " + jogadorSorteado + "?");
+
+            if (resposta === capitalCorreta) {
+                pontuacoes[jogadorSorteadoIndex]++;
+                alert("Resposta correta! " + jogadorSorteado + " ganhou 1 ponto.");
+            } else {
+                alert("Resposta incorreta. A capital de " + estadoSorteado + " é " + capitalCorreta + ".");
+            }
+        }
+
+        // Ordenar jogadores por pontuação em ordem decrescente
+        for (var i = 0; i < 4; i++) {
+            for (var j = i + 1; j < 4; j++) {
+                if (pontuacoes[j] > pontuacoes[i]) {
+                    var tempPontuacao = pontuacoes[i];
+                    pontuacoes[i] = pontuacoes[j];
+                    pontuacoes[j] = tempPontuacao;
+                    var tempJogador = jogadores[i];
+                    jogadores[i] = jogadores[j];
+                    jogadores[j] = tempJogador;
+                }
+            }
+        }
+
+        document.write("<h1>Classificação Final:</h1>");
+        for (var i = 0; i < 4; i++) {
+            document.write("<p>" + jogadores[i] + " - Pontuação: " + pontuacoes[i] + "</p>");
+        }
+    </script>
+</body>
+</html>

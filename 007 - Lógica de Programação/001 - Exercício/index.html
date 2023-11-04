@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercício 1</title>
+</head>
+<body>
+    
+    <script>
+        var notas = [];
+        var soma = 0;
+        var alunosAcimaMedia = 0;
+        var maiorNota = 0;
+        var posicoesMaiorNota = [];
+
+        var n = parseInt(prompt("Quantos alunos na turma?"));
+
+        for (var i = 0; i < n; i++) {
+            var nota = parseFloat(prompt("Digite a nota do aluno " + (i + 1)));
+            notas.push(nota);
+            soma += nota;
+            if (nota > maiorNota) {
+                maiorNota = nota;
+                posicoesMaiorNota = [i];
+            } else if (nota === maiorNota) {
+                posicoesMaiorNota.push(i);
+            }
+        }
+
+        var media = soma / n;
+
+        for (var i = 0; i < n; i++) {
+            if (notas[i] > media) {
+                alunosAcimaMedia++;
+            }
+        }
+
+        alert("Média da turma: " + media.toFixed(2));
+        alert("Alunos acima da média: " + alunosAcimaMedia);
+        alert("Maior nota digitada: " + maiorNota);
+        alert("Posições da maior nota: " + posicoesMaiorNota.join(", "));
+    </script>
+</body>
+</html>

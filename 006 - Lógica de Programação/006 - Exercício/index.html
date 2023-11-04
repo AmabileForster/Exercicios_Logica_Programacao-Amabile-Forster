@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 6</title>
+</head>
+<body>
+    <label for="idName">Nome:</label>
+    <input type="text" id="idName" name="idName">
+
+    <input type="button" value="Salvar" onclick="save()">
+    <input type="button" value="Exibir" onclick="show()">
+
+    <script>
+        var name1 = []
+
+        function save() {
+            name1.push(document.getElementById("idName").value)
+            document.getElementById('idName').value = ''
+        }
+
+        function show() {
+            let names = ''
+            for (let i = (name1.length - 1); i > -1; i--) {
+                console.log(name1[i])
+                names = names + name1[i] + ';'
+            }
+        }
+
+    </script>
+</body>
+</html>

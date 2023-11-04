@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1</title>
+</head>
+<body>
+    <output id="idOut"></output>
+
+    <script>
+        //Faça um algoritmo que mostre na tela a seguinte contagem: "Inicio 15 14 13 12 11 10 9 8 7 6 5 4 3 Acabou!"
+
+        var out = 'Inicio '
+        
+        for (let count = 15; count >= 3 ; count--){
+            out = out + count + ' '            
+        }
+
+        out = out + 'Acabou!'
+
+        console.log(out);
+        document.getElementById('idOut').value = out
+
+    </script>
+</body>
+</html>

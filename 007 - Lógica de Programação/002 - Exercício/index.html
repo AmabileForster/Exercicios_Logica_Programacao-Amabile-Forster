@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercício 2</title>
+</head>
+<body>
+    <script>
+        var nomes = [];
+        var idades = [];
+
+        for (var i = 0; i < 9; i++) {
+            var nome = prompt("Digite o nome da pessoa " + (i + 1));
+            var idade = parseInt(prompt("Digite a idade de " + nome));
+            nomes.push(nome);
+            idades.push(idade);
+        }
+
+        document.write("<h1>Pessoas menores de idade:</h1>");
+        for (var i = 0; i < 9; i++) {
+            if (idades[i] < 18) {
+                document.write("<p>Nome: " + nomes[i] + ", Idade: " + idades[i] + "</p>");
+            }
+        }
+    </script>
+</body>
+</html>

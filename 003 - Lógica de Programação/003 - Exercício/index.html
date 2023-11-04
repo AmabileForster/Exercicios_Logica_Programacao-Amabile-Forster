@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="">
+        <label for="idName" class="linha">Nome</label>
+        <input type="text" class="linha" id="idName">
+        <label for="idGrade1" class="linha">Nota 1</label>
+        <input type="number" class="linha" id="idGrade1">
+        <label for="idGrade2" class="linha">Nota 2</label>
+        <input type="number" class="linha" id="idGrade2">
+        <input type="button" class="linha" onclick="calculate()" value="Calcular Média">
+        <output id="idOut"></output>
+    </form>
+
+    <script>
+        function calculate(){
+            let name = document.getElementById("idName").value
+            let grade1 = Number(document.getElementById("idGrade1").value)
+            let grade2 = Number(document.getElementById("idGrade2").value)
+            let rate = (grade1 + grade2) /2
+
+            if(rate > 7){
+                document.getElementById("idOut").value = `Parabéns ${name}, você foi aprovado com média ${rate}!`
+            } else {
+                document.getElementById("idOut").value = `${name}, sentimos muito, infelizmente sua média de ${rate} não foi o suficiente para passar.`
+            }
+        }
+    </script>
+</body>
+</html>

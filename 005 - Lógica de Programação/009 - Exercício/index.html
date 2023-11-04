@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 9</title>
+</head>
+<body>
+    <label for="">Selecione a unidade de medida</label><br><br>
+    <input type="radio" name="nmTemp" id="idCelsius">
+    <label for="idCelsius">°C</label>
+    <input type="radio" name="nmTemp" id="idFahrenheit">
+    <label for="idFahrenheit">°F</label>
+    <input type="radio" name="nmTemp" id="idKelvin">
+    <label for="idKelvin">°K</label><br><br>
+    <label for="idTemp">Informe a temperatura</label><br><br>
+    <input type="text" name="nmTemp" id="idTemp"><br><br>
+
+    <input type="button" value="Converter" onclick="convert()"><br><br>
+    <output id="idOut"></output>
+
+    <script>
+        //Crie um novo programa a partir do exercício anterior e permita que o usuário escolha em que unidade de medida ele deseja informar a temperatura (C, F ou K). 
+        //O programa deverá converter deverá converter a temperatura para as outras unidades de medida.
+
+        
+        function convert() {
+            let temp = Number(document.getElementById('idTemp').value)
+            let unit = document.querySelector('input[name=nmTemp]:checked').id
+            let celsius = 0
+            let kelvin = 0
+            let fahrenheit = 0
+
+            if(unit == 'idKelvin'){
+                kelvin = temp
+                celsius = kelvin - 273
+                fahrenheit = (9 * celsius + 160) / 5
+            } else if (unit == 'idCelsius'){
+                celsius = temp
+                kelvin = celsius + 273
+                fahrenheit = (9 * celsius + 160) / 5
+            } else {
+                fahrenheit = temp
+                celsius = (fahrenheit - 32) * 5 / 9
+                kelvin = celsius + 273
+            }
+
+            document.getElementById('idOut').innerText = `${celsius}°C \n
+                                                          ${fahrenheit}°F \n
+                                                          ${kelvin}°K \n`
+
+        }       
+
+    </script>
+</body>
+</html>

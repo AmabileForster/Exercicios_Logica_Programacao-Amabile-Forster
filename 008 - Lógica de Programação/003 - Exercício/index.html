@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercício 3</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Listagem de Funcionárias Mulheres com Salário acima de R$5 mil</h1>
+        <ul class="list-group">
+            <script>
+                var nomes = ["Alice", "Bob", "Carla", "David", "Eva"];
+                var sexos = ["F", "M", "F", "M", "F"];
+                var salarios = [6000, 4000, 7000, 4500, 8000];
+
+                var funcionarias = nomes
+                    .map(function (nome, index) {
+                        return {
+                            nome: nome,
+                            sexo: sexos[index],
+                            salario: salarios[index]
+                        };
+                    })
+                    .filter(function (funcionario) {
+                        return funcionario.sexo === 'F' && funcionario.salario > 5000;
+                    });
+
+                funcionarias.forEach(function (funcionario) {
+                    document.write('<li class="list-group-item">' + funcionario.nome + ' - Salário: R$' + funcionario.salario + '</li>');
+                });
+            </script>
+        </ul>
+    </div>
+</body>
+</html>

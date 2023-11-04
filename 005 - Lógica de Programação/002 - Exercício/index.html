@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+</head>
+<body>
+<label for="idInitialNumber">Numero inicial</label><br>
+    <input type="number" id="idInitialNumber"><br><br>
+    <label for="idFinalNumber">Numero Final</label><br>
+    <input type="number" id="idFinalNumber"><br><br>
+    <input type="button" value="Contar" onclick="counter()"><br><br>
+
+    <output id="idOut"></output>
+
+    <script>
+//Crie um programa que leia os valores inicial e final de um intervalo e imprima todos os números primos contidos no intervalo.
+
+        function counter(){
+            let initial = Number(document.querySelector('#idInitialNumber').value)
+            let final = Number(document.querySelector('#idFinalNumber').value)
+            let message = "Inicio "
+
+            for (let i = initial; i <= final; i++) {
+                isPrime = true
+                for (let j = 2; j < i; j++) {
+                    if(i % j == 0){
+                        isPrime = false
+                    }
+                
+                }
+                if (isPrime) {
+                    if (i != 1) {
+                        message = `${message} ${i} `
+                    }
+                }
+                
+            }
+
+
+
+            message = message + "Acabou!"
+            
+console.log(message);
+            document.querySelector('#idOut').value = message
+        }
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercício 3</title>
+</head>
+<body>
+    <script>
+        var nomes = [];
+        var sexos = [];
+        var salarios = [];
+
+        for (var i = 0; i < 5; i++) {
+            var nome = prompt("Digite o nome do funcionário " + (i + 1));
+            var sexo = prompt("Digite o sexo de " + nome + " (m/f)");
+            var salario = parseFloat(prompt("Digite o salário de " + nome));
+            nomes.push(nome);
+            sexos.push(sexo);
+            salarios.push(salario);
+        }
+
+        document.write("<h1>Funcionárias mulheres que ganham mais de R$5 mil:</h1>");
+        for (var i = 0; i < 5; i++) {
+            if (sexos[i] === "f" && salarios[i] > 5000) {
+                document.write("<p>Nome: " + nomes[i] + ", Salário: R$" + salarios[i] + "</p>");
+            }
+        }
+    </script>
+</body>
+</html>
